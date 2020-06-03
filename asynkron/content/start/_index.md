@@ -9,6 +9,9 @@ Hello World
 ```csharp
 public static void Apa() {
     //pass
+    foreach(var foo in bar) {
+        
+    }
 }
 ```
 
