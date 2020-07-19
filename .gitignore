@@ -351,3 +351,8 @@ MigrationBackup/
 
 asynkron/public/*
 asynkron/public/**
+asynkron/public/index.xml
+asynkron/public/index.xml
+asynkron/public/sitemap.xml
+asynkron/public/categories/index.xml
+asynkron/public/tags/index.xml
