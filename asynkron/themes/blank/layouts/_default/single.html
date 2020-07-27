@@ -2,7 +2,7 @@
 	<main>
 		<article>
 			<h1>{{ .Title }}</h1>
-			<time>{{ .Date.Format "02.01.2006 15:04" }}</time>
+			<time>{{ .Date.Format "2006.03.01 15:04" }}</time>
 			<div>
 				{{ .Content }}
 			</div>
@@ -14,13 +14,7 @@
 					{{ end }}
 				</ul>
 			</div>
-			{{ end }}
-			{{ with .Site.DisqusShortname }}
-			<div>
-				{{ template "_internal/disqus.html" . }}
-			</div>
-			{{ end }}
+			{{ end }}		
 		</article>
 	</main>
-{{ partial "sidebar.html" . }}
 {{ end }}
