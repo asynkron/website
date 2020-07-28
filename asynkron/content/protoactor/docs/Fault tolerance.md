@@ -1,6 +1,8 @@
 ---
-layout: docs.hbs
-title: Fault tolerance
+title: "Fault Tolerance"
+date: 2020-05-28T16:34:24+02:00
+draft: false
+tags: [protoactor, docs]
 ---
 # Fault Tolerance
 
