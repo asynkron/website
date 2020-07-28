@@ -2,7 +2,7 @@
 layout: docs.hbs
 title: Cluster
 ---
-# GAM Cluster
+# Proto.Actor Cluster
 
 ## Virtual Actors
 
