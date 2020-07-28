@@ -9,9 +9,9 @@ tags: [protoactor, docs]
 
 ## Introduction
 
-- [What is Proto.Actor?](What is ProtoActor)
-- [Why Proto.Actor?](Why ProtoActor)
-- [Design Principles](Design Principles)
+- [What is Proto.Actor?](What%20is%20ProtoActor)
+- [Why Proto.Actor?](Why%20ProtoActor)
+- [Design Principles](Design%20Principles)
 - [Features](Features)
 
 ## Proto.Actor Concepts
@@ -20,7 +20,7 @@ tags: [protoactor, docs]
 - [What is a Message?](Messages)
 - [Terminology, Concepts](Terminology)
 - [Supervision and Monitoring](Supervision)
-- [Location Transparency](Location Transparency)
+- [Location Transparency](Location%20Transparency)
 - [Message Delivery Reliability](Durability)
 
 ## Languages APIs
