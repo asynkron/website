@@ -9,20 +9,20 @@ title: Go Documentation
 
 ## Actor
 - [Hello World](Hello World)
-- [Props](Props)
-- [Spawning Actors](Spawn)
+- [Props](props)
+- [Spawning Actors](spawn)
 - [PID](PID)
-- [The ProcessRegistry](ProcessRegistry)
-- [The EventStream](EventStream)
-- [Using Mailboxes](Mailboxes)
-- [Using Dispatchers](Dispatchers)
-- [Using Receive Pipelines](Receive Pipeline)
-- [Handling DeadLetter](DeadLetter)
-- [Handling Lifecycle Events](Lifecycle Events)
+- [The ProcessRegistry](processregistry)
+- [The EventStream](eventstream)
+- [Using Mailboxes](mailboxes)
+- [Using Dispatchers](dispatchers)
+- [Using Receive Pipelines](receive-pipeline)
+- [Handling DeadLetter](deadletter)
+- [Handling Lifecycle Events](lifecycle-events)
 
 ## Remoting
-- [Remote](Remote)
+- [Remote](remote)
 
 ## Cluster
-- [Cluster](Cluster)
-- [Grains](Grains)
+- [Cluster](cluster)
+- [Grains](grains)

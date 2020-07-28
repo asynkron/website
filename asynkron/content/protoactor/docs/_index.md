@@ -9,10 +9,10 @@ tags: [protoactor, docs]
 
 ## Introduction
 
-- [What is Proto.Actor?](What%20is%20ProtoActor)
-- [Why Proto.Actor?](Why%20ProtoActor)
-- [Design Principles](Design%20Principles)
-- [Features](Features)
+- [What is Proto.Actor?](what-is-protoactor)
+- [Why Proto.Actor?](why-protoactor)
+- [Design Principles](design-principles)
+- [Features](features)
 
 ## Proto.Actor Concepts
 
