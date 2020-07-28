@@ -1,10 +1,4 @@
 {{ define "main" }}
-	<main>
-		{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-		{{ range $paginator.Pages }}
-			{{ .Render "summary" }}
-		{{ end }}
-		{{ partial "pagination.html" . }}
-	</main>
-
+    {{ .Content }}
+	<div class="divider divider-bottom bg-primary-3 mt-5"></div>
 {{ end }}
