@@ -10,3 +10,40 @@
 pre {
     padding: 16px;    
 }
+
+#TableOfContents {
+    font-size: smaller;
+
+}
+
+#TableOfContents ul {
+    list-style: none;
+    padding: 0;
+}
+
+#TableOfContents li {
+    display: block;
+    padding-left: 10px;
+}
+
+#TableOfContents li a {
+    padding: 8px 0 8px 18px;
+    display: block;
+    color: #666;
+    border-bottom: 1px solid #EDEDDE;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+#TableOfContents li a:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #333;
+    margin: 6px 0 0 -10px;
+    position: absolute;
+}
+
