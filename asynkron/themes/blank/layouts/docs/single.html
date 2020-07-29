@@ -2,15 +2,19 @@
 
 <section class="bg-light o-hidden pt-5 pb-0">
     <div class="container">
+        {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+        {{ $.Scratch.Add "path" .Site.BaseURL }}
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            {{ range (split .RelPermalink "/") }}
-                {{ if gt (len . ) 0 }}
-                <li class="breadcrumb-item"><a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a></li>
-                {{ end }}
+            {{ range $index, $element := split $url "/" }}
+            {{ $.Scratch.Add "path" $element }}
+            {{ if ne $element "" }}
+            <li class="breadcrumb-item"><a href='{{ $.Scratch.Get "path" }}'>{{ humanize (replace . "posts" "blog") }}</a></li>
+            {{ $.Scratch.Add "path" "/" }}
+            {{ end }}
             {{ end }}
         </ol>
-        
+
         <div class="row">
 
             <div class="col col-lg-9 mb-4 mb-lg-0" data-aos="fade-right">
@@ -22,11 +26,12 @@
                             </div>
                             {{ with .Params.tags }}
                             <div>
-                                
-                                    {{ range . }}
-                                    <a class="badge badge-primary badge-pill" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-                                    {{ end }}
-                                
+
+                                {{ range . }}
+                                <a class="badge badge-primary badge-pill"
+                                    href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                                {{ end }}
+
                             </div>
                             {{ end }}
                         </article>
@@ -39,17 +44,17 @@
                     <div class="list-group-item">
                         <h6 class="mb-0">Topics</h6>
                     </div>
-                    <div class="list-group-item p-0 ">                        
+                    <div class="list-group-item p-0 ">
                         {{ .TableOfContents }}
-                    </aside>
+                        </aside>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-    </div>
     <div class="divider divider-bottom bg-dark mt-5"></div>
-    
+
 </section>
 
 {{ end }}
