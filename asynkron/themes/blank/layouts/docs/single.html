@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<section class="bg-light o-hidden pt-5 pb-0">
+    <div class="container">
+
+        <div class="row  justify-content-between">
+
+            <div class="col col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="pr-xl-5">
+                    <main>
+                        <article>
+                            <h1>{{ .Title }}</h1>
+                            <time>{{ .Date.Format "2006.03.01 15:04" }}</time>
+                            <div>
+                                {{ .Content }}
+                            </div>
+                            {{ with .Params.tags }}
+                            <div>
+                                <ul id="tags">
+                                    {{ range . }}
+                                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+                            {{ end }}
+                        </article>
+                    </main>
+                </div>
+            </div>
+
+            <div class="col sticky-lg-top">
+                <div class="list-group mb-3 mb-md-4">
+                    <div class="list-group-item">
+                        <h6 class="mb-0">Table of contents</h6>
+                    </div>
+                    <div class="list-group-item">                        
+                        {{ .TableOfContents }}
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="divider divider-bottom bg-dark mt-5"></div>
+</section>
+{{ end }}
