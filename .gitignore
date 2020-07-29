@@ -7,3 +7,7 @@ asynkron/public/categories/index.xml
 asynkron/public/tags/index.xml
 .DS_Store
 ~$*
+.DS_Store
+asynkron/.DS_Store
+theme/.DS_Store
+theme/Jumpstart HTML template 2.0.0/.DS_Store
