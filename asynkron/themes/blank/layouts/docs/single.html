@@ -1,6 +1,16 @@
 {{ define "main" }}
+
 <section class="bg-light o-hidden pt-5 pb-0">
     <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            {{ range (split .RelPermalink "/") }}
+                {{ if gt (len . ) 0 }}
+                <li class="breadcrumb-item"><a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ol>
+        
 
         <div class="row">
 
