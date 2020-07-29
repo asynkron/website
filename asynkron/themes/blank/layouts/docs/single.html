@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="bg-light o-hidden pt-5 pb-0">
+<section class="bg-light o-hidden pt-0 pb-0">
     <div class="container">
         {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
         {{ $.Scratch.Add "path" .Site.BaseURL }}
