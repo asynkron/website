@@ -4,7 +4,7 @@
     <div class="container">
         {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
         {{ $.Scratch.Add "path" .Site.BaseURL }}
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" data-aos="fade-down">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             {{ range $index, $element := split $url "/" }}
             {{ $.Scratch.Add "path" $element }}
