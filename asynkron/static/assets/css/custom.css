@@ -16,15 +16,15 @@ pre {
     border: 1px solid #dee3e8;
    
     border-left: 12px solid #e9edf1;
-
+    line-height: 18px;
 
 }
 
 pre code {
     font-weight: normal;
     font-family: "Lucida Console", Monaco, monospace !important;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 13px;
+
 }
 
 #TableOfContents {
