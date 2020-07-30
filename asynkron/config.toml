@@ -12,5 +12,5 @@ theme = "blank"
     lineNos = false
     lineNumbersInTable = false
     noClasses = true
-    style = "monokai"
+    style = "xcode"
     tabWidth = 4
