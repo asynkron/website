@@ -1,0 +1,5 @@
+{{ $htmlTable := .Inner | markdownify }}
+{{ $old := "<table>" }}
+{{ $new := "<table class=\"table\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+{{ $htmlTable | safeHTML }}

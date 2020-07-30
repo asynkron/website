@@ -14,3 +14,6 @@ theme = "blank"
     noClasses = true
     style = "xcode"
     tabWidth = 4
+
+[markup.goldmark.renderer]
+  unsafe = true
