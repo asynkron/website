@@ -76,3 +76,8 @@ pre code {
     border: 1px solid #93bfd0;
     border-left-width: 16px;
 }
+
+body {
+    font-weight: 400;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+}
