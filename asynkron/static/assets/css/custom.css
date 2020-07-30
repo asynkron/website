@@ -63,3 +63,11 @@ pre code {
     position: absolute;
 }
 
+.note-text {
+    font-weight: 400;
+}
+
+.note-header {
+    display: block;
+    padding-bottom: 8px;
+}
