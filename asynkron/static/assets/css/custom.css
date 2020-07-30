@@ -39,8 +39,9 @@ pre code {
 
 #TableOfContents li {
     display: block;
-    padding-left: 10px;
+    padding-left: 16px;
 }
+
 
 #TableOfContents li a {
     padding: 8px 0 8px 18px;
@@ -49,6 +50,11 @@ pre code {
     border-bottom: 1px solid #EDEDDE;
     line-height: 20px;
     font-weight: 500;
+}
+
+
+#TableOfContents > ul > li > a {
+    font-weight: 800 !important;
 }
 
 #TableOfContents li a:before {
