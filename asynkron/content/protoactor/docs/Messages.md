@@ -17,7 +17,7 @@ One of the most fundamental concepts to the Actor model is the notion of ["messa
 ## How are messages defined?
 In Proto.Actor messages are simple POCO classes:
 
-#### `C#`
+### C#
 
 ```csharp
 public class MyMessage
@@ -31,7 +31,7 @@ public class MyMessage
 }
 ```
 
-#### `Go`
+### Go
 
 ```go
 type MyMessage struct {
