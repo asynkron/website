@@ -2,26 +2,8 @@
 
 <section class="bg-light o-hidden pt-0 pb-0">
     <div class="container">
-        {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-        {{ $.Scratch.Add "path" .Site.BaseURL }}
-        <ol class="breadcrumb" data-aos="fade-down">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            {{ $list := split $url "/" }}
-            {{ $last := (sub (len $list) 2)}}
-            {{ range $index, $element := $list}}
-                {{ $.Scratch.Add "path" $element }}
-                {{ if ne $element "" }}
-                    {{ if ne $index $last}}
-                        
-                        <li class="breadcrumb-item"><a
-                                href='{{ $.Scratch.Get "path" }}'>{{ humanize (replace . "posts" "blog") }}</a></li>
-                    {{ else }}
-                    <li class="breadcrumb-item active">{{ humanize (replace . "posts" "blog") }}</li>
-                    {{ end }}
-                {{ $.Scratch.Add "path" "/" }}
-                {{ end }}
-            {{ end }}
-        </ol>
+        
+        {{ partial "breadcrumbs" . }}
 
         <div class="row">
 
