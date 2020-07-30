@@ -71,3 +71,8 @@ pre code {
     display: block;
     padding-bottom: 8px;
 }
+
+.note {
+    border: 1px solid #93bfd0;
+    border-left-width: 16px;
+}
