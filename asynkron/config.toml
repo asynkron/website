@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://asynkron.se/"
 languageCode = "en-us"
 title = "Asynkron AB"
 theme = "blank"
