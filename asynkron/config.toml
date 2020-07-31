@@ -1,7 +1,12 @@
-baseURL = "https://asynkron.se/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Asynkron AB"
 theme = "blank"
+relativeURLs = "true"
+uglyURLs = "true"
+[params]
+  ugly = ".html"
+  uglyhome = "/index.html"
 
 [markup]
   [markup.highlight]
