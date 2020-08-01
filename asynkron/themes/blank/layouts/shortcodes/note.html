@@ -1,8 +1,4 @@
-{{ $inner := .Inner }}
-{{- with .Page -}}
-{{ . }}
 <div class="alert alert-info note">
     <strong class="note-header"><i>NOTE</i></strong>    
-    <i class="note-text">{{ $.Page.RenderString $inner }}</i>
+    <i class="note-text">{{ $.Page.RenderString .Inner }}</i>
 </div>
-{{- end -}}
