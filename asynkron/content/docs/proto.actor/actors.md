@@ -5,8 +5,6 @@ draft: false
 tags: [protoactor, docs]
 ---
 
-[test](dotnet/Behaviors.md)
-
 # Actors
 
 An actor is a container for [State](#state), [Behavior](#behavior), a [Mailbox](#mailbox), [Children](#children) and a [Supervisor Strategy](#supervisor-strategy). All of this is encapsulated behind an Actor Reference(`ActorRef`).

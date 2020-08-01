@@ -72,7 +72,7 @@ var props = new Props()
 
 ## See also
 
-- [Dispatchers](Dispatchers)
-- [Mailboxes](Mailboxes)
-- [Supervision](Supervision)
-- [Middleware](Middleware)
+- [Dispatchers](dispatchers.md)
+- [Mailboxes](mailboxes.md)
+- [Supervision](supervision.md)
+- [Middleware](middleware.md)

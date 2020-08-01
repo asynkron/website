@@ -33,7 +33,7 @@ For the sake of demonstration let us consider the following strategy:
 !!!TODO: Port sample code
 
 We have chosen a few well-known exception types in order to demonstrate the
-application of the fault handling directives described in [Supervision](Supervision).
+application of the fault handling directives described in [Supervision](supervision.md).
 First off, it is a one-for-one strategy, meaning that each child is treated
 separately (an all-for-one strategy works very similarly, the only difference
 is that any decision is applied to all children of the supervisor, not only the
@@ -86,7 +86,7 @@ by overriding the `logFailure` method.
 ## Supervision of Top-Level Actors
 
 Top-level actors means those which are created using `actor.Spawn()`, and
-they are children of the [Root Guardian](root guardian). There are no
+they are children of the [Root Guardian](root-guardian.md). There are no
 special rules applied in this case, the guardian simply applies the configured
 strategy.
 
