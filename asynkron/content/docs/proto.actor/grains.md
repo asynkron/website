@@ -27,13 +27,13 @@ Instead, we leverage proven technologies such as Consul.
 
 This means that Consul manages the cluster formation:
 
-<img src="images/ConsulCluster.png" style="width:50%">
+![Consul Cluster](images/consulcluster.png)
 
 ## Proto Cluster
 
 On top of this, we attach the Proto.Actor members:
 
-<img src="images/ProtoCluster.png" style="width:50%">
+![Proto Cluster](images/protocluster.png)
 
 ## Name to Member affinity
 
@@ -44,11 +44,11 @@ A hash ring can be to locate what member in a cluster should own certain resourc
 
 In this specific case, we want to talk to the actor named "Roger", which gives the hash-code 989123 (an example only)
 
-<img src="images/NameHash.png" style="width:50%">
+![Name Hash](images/namehash.png)
 
 By matching the hash-code against the hash ring, we can see that the member closest to the given actor name is the member "E".
 
-<img src="images/NameOwner.png" style="width:50%">
+![Name Owner](images/nameowner.png)
 
 ## Actor Activations
 
@@ -57,7 +57,7 @@ What is important to understand here is that the member "E" in this case, do not
 The Actor itself is then spawned or "activated" somewhere in the cluster.
 This might seem strange at first, why do we need this two step structure for locating actors?
 
-<img src="images/ActorPlacement.png" style="width:50%">
+![Actor Placement](images/actorplacement.png)
 
 ## Dealing with Topology Changes
 
@@ -67,13 +67,13 @@ In the case members join or leave the cluster, the topology change, and the shap
 This in turn means that the name of the actor, might now be owned by another node.
 And by having this two-step structure, we only need to transfer the ownership of the name itself and not the actor and all of its state.
 
-<img src="images/TopologyChange.png" style="width:50%">
+![Topology Change](images/topologychange.png)
 
 This model makes the cluster extremely robust to failures, only parts of the cluster will fail when a member leaves, and nothing will fail when a member joins the cluster.
 
 In this specific case, even if all members except B and F leaves, the specific actor here is still reachable.
 
-<img src="images/CompleteFailure.png" style="width:50%">
+![Complete Failure](images/completefailure.png)
 
 ## Multiple Activations
 

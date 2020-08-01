@@ -47,7 +47,7 @@ We call it a Race condition when an assumption about the ordering of a set of ev
 
 >Note
 >
->The only guarantee that Proto.Actor provides about messages sent between a given pair of actors is that their order is always preserved. see [Message Delivery Reliability](message-delivery-reliability)
+>The only guarantee that Proto.Actor provides about messages sent between a given pair of actors is that their order is always preserved. see [Message Delivery Reliability](durabikity)
 
 ## Non-blocking Guarantees (Progress Conditions)
 

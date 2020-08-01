@@ -15,4 +15,4 @@
     <figcaption>{{ with $.Title | safeHTML }}{{ . }}{{ end }}</figcaption>
 </figure>
 {{- else -}}
-<img src="../{{ .Destination | safeURL }}" alt="{{ $.Text }}" />{{- end -}}
+<img src="../{{ .Destination | safeURL }}" class="markdown-img" alt="{{ $.Text }}" />{{- end -}}
