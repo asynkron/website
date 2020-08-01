@@ -28,8 +28,8 @@ code {
 }
 
 p code, li code, i code {
-    background-color: #fff;
-    border: 1px solid #dee3e8;
+    background-color: #feeaea;
+
     border-radius: 4px;
     padding: 2px 6px 2px 6px;
     font-weight: 450;
