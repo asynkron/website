@@ -14,9 +14,9 @@
                             <div>
                                 {{ $content := .Content }}
                                 {{ $content = replace $content "<table" "<table class='table bg-white'" }}
-								Before
+								
 								{{ safeHTML $content}}
-								After
+								
                             </div>
                             {{ with .Params.tags }}
                             <div>

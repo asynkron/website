@@ -20,5 +20,14 @@ theme = "blank"
     style = "xcode"
     tabWidth = 4
 
-[markup.goldmark.renderer]
-  unsafe = true
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true

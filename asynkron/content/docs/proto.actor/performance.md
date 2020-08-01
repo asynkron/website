@@ -32,7 +32,7 @@ to optimize in-process performance.
 
 ## SkyNet
 
-[https://github.com/atemerev/skynet](https://github.com/atemerev/skynet)
+https://github.com/atemerev/skynet
 
 Creates an actor (goroutine, whatever), which spawns 10 new actors, each of them spawns 10 more actors, etc. until one million actors are created on the final level. Then, each of them returns back its ordinal number (from 0 to 999999), which are summed on the previous level and sent back upstream, until reaching the root actor. (The answer should be 499999500000).
 

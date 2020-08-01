@@ -51,7 +51,7 @@ Context.Stop(targetActorRef);
 #### What Happens When I Send an Actor a `PoisonPill`?
 Like `Stop`, `PoisonPill` message is an auto-received, system-level message. But the actor handles a `PoisonPill` in a different manner than `Stop`. Rather than being handled immediately, the actor treats a `PoisonPill` like an ordinary message. The `PoisonPill` goes to the back of the actor's mailbox.
 
-The actor then processes the messages that are ahead of the PoisonPill in the mailbox. [Once it reaches the PoisonPill, the actor tells itself to Stop](https://github.com/akkadotnet/akka.net/blob/dev/src/core/Akka/Actor/ActorCell.DefaultMessages.cs#L275) and the sequence above will begin.
+The actor then processes the messages that are ahead of the PoisonPill in the mailbox. 
 
 #### How Do I Use `PoisonPill`?
 You send an actor a `PoisonPill` like this:
@@ -69,10 +69,7 @@ You should use `PoisonPill` when you want the actor to process its mailbox befor
 `Kill` will cause an actor to be `Stop`ped by its supervisor. In the process, the supervisor will log the `ActorKilledException`.
 
 #### What Happens When I `Kill` an Actor?
-1. [The actor throws]((https://github.com/akkadotnet/akka.net/blob/dev/src/core/Akka/Actor/ActorCell.DefaultMessages.cs#L376)) an [`ActorKilledException`](https://github.com/akkadotnet/akka.net/blob/dev/src/core/Akka/Actor/Exceptions.cs#L134). The actor's supervisor logs this message.
-    - Note: This suspends the actor mailbox from processing further user messages.
-2. The actor's supervisor [handles the `ActorKilledException` and issues a `Stop` directive.](https://github.com/akkadotnet/akka.net/blob/dev/src/core/Akka/Actor/SupervisorStrategy.cs#L85)
-3. The actor will stop per the `Stop` sequence outlined above.
+// TODO
 
 #### How Do I Use `Kill`?
 You `Kill` an actor like this:
