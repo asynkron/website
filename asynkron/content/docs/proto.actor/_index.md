@@ -9,10 +9,10 @@ tags: [protoactor, docs]
 
 ## Introduction
 
-- {{< link "What is Proto.Actor?" "actors.md" >}}
+- {{< link "What is Proto.Actor?" "what-is-protoactor.md" >}}
 - {{< link "Why Proto.Actor?" "why-protoactor.md" >}}
 - {{< link "Design Principles" "design-principles.md" >}}
-- [Features](features)
+- {{< link "Features" "features.md" >}}
 
 ## Proto.Actor Concepts
 
