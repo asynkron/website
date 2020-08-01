@@ -26,7 +26,7 @@ The cluster Grains are also similar in the sense that they use an RPC based inte
 The virtual actor model has proven to be very successful and is here to stay.
 We are fully embracing this concept.
 
-Read more [VirtualActors](VirtualActors)
+Read more {{< link "Grains" "grains.md" >}}
 
 ## Relation To Akka and Akka.NET
 The core parts of Proto.Actor loosely follow the conceptual API of Akka.
@@ -64,14 +64,14 @@ Download from https://github.com/AsynkronIT/protoactor-go.
 * Asynchronous, non-blocking and highly performant event-driven programming model.
 * Very lightweight event-driven processes (several million actors per GB of heap memory).
 
-## Virtual Actors
+## Virtual Actors aka. Grains
 * Easy to use RPC based abstraction for friction-free distributed programming.
 
 ### Fault Tolerance
 * Supervisor hierarchies with "let it crash" semantics.
 * Supervisor hierarchies can span over multiple virtual machines to provide truly fault-tolerant systems.
 * Excellent for writing highly fault-tolerant systems that self-heal and never stop.
-See [Fault Tolerance](Fault%20tolerance).
+See {{< link "Fault Tolerance" "fault-tolerance.md" >}}.
 
 ### Location Transparency
 Everything in Proto.Actor is designed to work in a distributed environment: all interactions of actors use pure message passing and everything is asynchronous.

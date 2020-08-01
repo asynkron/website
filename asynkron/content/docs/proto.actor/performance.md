@@ -7,7 +7,6 @@ tags: [protoactor, docs]
 
 # Performance and Benchmarks
 
-{{< table >}} 
 | Lib                | Remote PingPong    | Inproc PingPong      | SkyNet              |
 | ------------------ | ------------------:| --------------------:| -------------------:|
 | Proto.Actor Kotlin | ~2 700 000 msg/sec | ~160 000 000 msg/sec | ~0.31 sec           |
@@ -16,7 +15,6 @@ tags: [protoactor, docs]
 | Akka               | ?                  | ~38 000 000 msg/sec  | ?                   |
 | Akka.NET           | ~38 000 msg/sec    | ~30 000 000 msg/sec  | ~12 sec             |
 | Erlang             | ~200 000 msg/sc    | ~12 000 000 msg/sec  | ~0.75 sec           | 
-{{< /table >}}
 
 ## Remote PingPong
 
