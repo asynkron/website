@@ -32,6 +32,7 @@ p code {
     border: 1px solid #dee3e8;
     border-radius: 4px;
     padding: 2px 6px 2px 6px;
+    font-weight: bold;
     color: #b62a2a;
 }
 
@@ -101,6 +102,7 @@ h3, .h3 {
 }
 
 .markdown-img {
-    max-width: 50%;
+    max-height: 400px;
+  
     padding-bottom: 24px;
 }
