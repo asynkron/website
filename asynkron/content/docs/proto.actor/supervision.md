@@ -32,7 +32,7 @@ Proto.Actor implements a specific form called “parental supervision”. Actors
 
 ## The Top-Level Supervisors
 
-![Top level supervisors](images/TopLevelSupervisors.png)
+![Top level supervisors](images/toplevelsupervisors.png)
 
 An actor system will during its creation start at least three actors, shown in the image above. For more information about the consequences for actor paths see Top-Level Scopes for Actor Paths.
 
@@ -59,7 +59,7 @@ The precise sequence of events during a restart is the following:
 6. Send restart request to all children which were not killed in step 3; restarted children will follow the same process recursively, from step 2
 7. Resume the actor.
 
-##What Lifecycle Monitoring Means
+## What Lifecycle Monitoring Means
 >**Note**<br/>
 >Lifecycle Monitoring in Proto.Actor is usually referred to as `DeathWatch`
 

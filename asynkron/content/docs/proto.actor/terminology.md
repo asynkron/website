@@ -15,11 +15,11 @@ Concurrency and parallelism are related concepts, but there are small difference
 
 #### Concurrency
 
-![Concurrency](/docs/images/concurrency.png)
+![Concurrency](images/concurrency.png)
 
 #### Parallelism
 
-![Parallelism](/docs/images/parallelism.png)
+![Parallelism](images/parallelism.png)
 
 ## Asynchronous vs. Synchronous
 
