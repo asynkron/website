@@ -24,11 +24,12 @@ Each supervisor is configured with a function translating all possible failure c
 
 Proto.Actor implements a specific form called “parental supervision”. Actors can only be created by other actors—where the top-level actor is provided by the library—and each created actor is supervised by its parent. This restriction makes the formation of actor supervision hierarchies implicit and encourages sound design decisions. It should be noted that this also guarantees that actors cannot be orphaned or attached to supervisors from the outside, which might otherwise catch them unawares. In addition, this yields a natural and clean shutdown procedure for (sub-trees of) actor applications.
 
->**Warning**<br/>
->Supervision related parent-child communication happens by special system messages that have their own <br/>
->mailboxes separate from user messages. This implies that supervision related events are not deterministically <br/>
->ordered relative to ordinary messages. In general, the user cannot influence the order of normal messages and <br/>
->failure notifications. For details and example see the Discussion: Message Ordering section.<br/>
+{{< warning >}}
+Supervision related parent-child communication happens by special system messages that have their own <br/>
+mailboxes separate from user messages. This implies that supervision related events are not deterministically <br/>
+ordered relative to ordinary messages. In general, the user cannot influence the order of normal messages and <br/>
+failure notifications. For details and example see the Discussion: Message Ordering section.
+{{</ warning >}}
 
 ## The Top-Level Supervisors
 
@@ -60,8 +61,10 @@ The precise sequence of events during a restart is the following:
 7. Resume the actor.
 
 ## What Lifecycle Monitoring Means
->**Note**<br/>
->Lifecycle Monitoring in Proto.Actor is usually referred to as `DeathWatch`
+
+{{< note >}}
+Lifecycle Monitoring in Proto.Actor is usually referred to as `DeathWatch`
+{{</ note >}}
 
 In contrast to the special relationship between parent and child described above, each actor may monitor any other actor. Since actors emerge from creation fully alive and restarts are not visible outside of the affected supervisors, the only state change available for monitoring is the transition from alive to dead. Monitoring is thus used to tie one actor to another so that it may react to the other actor's termination, in contrast to supervision which reacts to failure.
 

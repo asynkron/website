@@ -45,9 +45,9 @@ Livelock is similar to deadlock as none of the participants make progress. The d
 
 We call it a Race condition when an assumption about the ordering of a set of events might be violated by external non-deterministic effects. Race conditions often arise when multiple threads share mutable state, and the operations of a thread on the state might interleave causing unexpected behavior. While this is a common case, shared state is not necessary to have race conditions. One example could be a client sending unordered packets (e.g UDP datagrams) P1, P2 to a server. As the packets might potentially travel via different network routes, it is possible that the server receives P2 first and P1 afterwards. If the messages contain no information about their sending order it is impossible to determine by the server that they were sent in a different order. Depending on the meaning of the packets this can cause race conditions.
 
->Note
->
->The only guarantee that Proto.Actor provides about messages sent between a given pair of actors is that their order is always preserved. see [Message Delivery Reliability](durabikity)
+{{< note >}}
+The only guarantee that Proto.Actor provides about messages sent between a given pair of actors is that their order is always preserved. see [Message Delivery Reliability](../durability)
+{{</ note >}}
 
 ## Non-blocking Guarantees (Progress Conditions)
 

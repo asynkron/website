@@ -27,7 +27,7 @@ code {
     font-size: 14px;
 }
 
-p code {
+p code, li code, i code {
     background-color: #fff;
     border: 1px solid #dee3e8;
     border-radius: 4px;
@@ -84,9 +84,31 @@ p code {
     padding-bottom: 8px;
 }
 
-.note {
-    border: 1px solid #93bfd0;
-    border-left-width: 16px;
+.warning {
+
+   
+}
+
+.warning a {
+    color: #03191d
+}
+
+.warning-text {
+    font-weight: 400;
+}
+
+.warning-header {
+    display: block;
+    padding-bottom: 8px;
+}
+
+.warning {
+
+   
+}
+
+.note a {
+    color: #03191d
 }
 
 body {

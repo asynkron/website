@@ -128,9 +128,10 @@ illustrated in the following:
       5) `A2` can see messages from `A1` interleaved with messages from `A3`
       6) Since there is no guaranteed delivery, any of the messages may be dropped, i.e. not arrive at `A2`
 
->**Note**<br/>
+{{< note >}}
 It is important to note that Proto.Actor's guarantee applies to the order in which
 messages are enqueued into the recipient's mailbox. 
+{{</ note >}}
 
 Please note that this rule is **not transitive**:
 
@@ -147,7 +148,7 @@ Causal transitive ordering would imply that `M2` is never received before
 violated due to different message delivery latencies when `A`, `B` and
 `C` reside on different network hosts, see more below.
 
->**Note**<br/>
+{{< note >}}
 Actor creation is treated as a message sent from the parent to the child,
 with the same semantics as discussed above. Sending a message to an actor in
 a way which could be reordered with this initial creation message means that
@@ -156,6 +157,7 @@ where the message might arrive too early would be to create a remote-deployed
 actor R1, send its reference to another remote actor R2 and have R2 send a
 message to R1. An example of well-defined ordering is a parent which creates
 an actor and immediately sends a message to it.
+{{</ note >}}
 
 ### Communication of failure
 
@@ -282,7 +284,7 @@ easily be reconstructed by replaying the event stream (usually employing
 snapshots to speed up the process). :ref:`event-sourcing` is supported by
 Proto.Actor Persistence.
 
-###Mailbox with Explicit Acknowledgement
+### Mailbox with Explicit Acknowledgement
 
 By implementing a custom mailbox type it is possible retry message processing
 at the receiving actor's end in order to handle temporary failures. This
@@ -318,7 +320,7 @@ The dead letter service follows the same rules with respect to delivery
 guarantees as all other message sends, hence it cannot be used to implement
 guaranteed delivery.
 
-###How do I Receive Dead Letters?
+### How do I Receive Dead Letters?
 
 An actor can subscribe to class `DeadLetter` on the event
 stream, see [[event stream]] for how to do that. The subscribed actor will then receive all dead
@@ -330,7 +332,7 @@ determine that a send operation is failed, which for a remote send can be the
 local system (if no network connection can be established) or the remote one
 (if the actor you are sending to does not exist at that point in time).
 
-###Dead Letters Which are (Usually) not Worrisome
+### Dead Letters Which are (Usually) not Worrisome
 
 Every time an actor does not terminate by its own decision, there is a chance
 that some messages which it sends to itself are lost. There is one which
