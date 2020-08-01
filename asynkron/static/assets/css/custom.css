@@ -9,13 +9,16 @@
 
 pre {
     padding: 16px;
-    background-color: #fff;
+    
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
     border: 1px solid #dee3e8;
-    border-left: 12px solid #e9edf1;
+    border-left: 10px solid #e9edf1;
     line-height: 18px;
+    overflow-x: scroll;
+    border-radius: 4px;
+
 }
 
 code {
@@ -29,7 +32,7 @@ p code {
     border: 1px solid #dee3e8;
     border-radius: 4px;
     padding: 2px 6px 2px 6px;
-    font-weight: bold;
+    font-weight: 450;
     color: #b62a2a;
 }
 
@@ -99,4 +102,8 @@ h3, .h3 {
 .markdown-img {
     max-height: 400px;
     padding-bottom: 24px;
+}
+
+.markdown-img-bg {
+    /* */
 }
