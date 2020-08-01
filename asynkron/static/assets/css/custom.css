@@ -88,9 +88,6 @@ p code, li code, i code {
    
 }
 
-.warning a {
-    color: #03191d
-}
 
 .warning-text {
     font-weight: 400;
@@ -106,9 +103,6 @@ p code, li code, i code {
    
 }
 
-.note a {
-    color: #03191d
-}
 
 body {
     font-weight: 400;
