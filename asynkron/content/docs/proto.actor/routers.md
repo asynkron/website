@@ -1,5 +1,3 @@
-
-
 # Routers
 
 A *router* is a special type of actor whose job is to route messages to other actors called *routees*. Different routers use different *strategies* to route messages efficiently.
@@ -28,13 +26,13 @@ var pid = system.Root.Spawn(props);
 
 There are two types of routers:
 
-* **Pools**
+### Pools
 
-  Router "Pools" are routers that create their own worker actors, that is; you provide the *number of instances* as a parameter to the router and the router will handle routee creation by itself.
+Router "Pools" are routers that create their own worker actors, that is; you provide the *number of instances* as a parameter to the router and the router will handle routee creation by itself.
 
-* **Groups**
+### Groups
 
-  Sometimes, rather than having the router actor create its routees, it is desirable to create routees yourself and provide them to the router for its use. You can do this by passing the paths of the routees to the router's configuration. Messages will be sent with `ActorSelection` to these paths.
+Sometimes, rather than having the router actor create its routees, it is desirable to create routees yourself and provide them to the router for its use. You can do this by passing the PIDs of the routees to the group router
 
 {{< note >}}
 Most routing strategies listed below are available in both types. Some of them may be available only in one type due to implementation requirements.
@@ -58,11 +56,11 @@ These are the routing strategies provided by Proto.Actor out of the box.
 
 `RoundRobinPool` and `RoundRobinGroup` are routers that sends messages to routees in [round-robin](http://en.wikipedia.org/wiki/Round-robin) order. It's the simplest way to distribute messages to multiple worker actors, on a best-effort basis.
 
-![Round Robin Router](mages/round-robin-router.png)
+![Round Robin Router](images/round-robin-router.png)
 
 #### Usage:
 
-RoundRobinPool defined in code:
+`RoundRobinPool` defined in code:
 
 ```cs
 //pool of 5 workers
@@ -70,7 +68,7 @@ var props = system.Root.NewRoundRobinPool(MyActorProps, 5);
 var pid = system.Root.Spawn(props);
 ```
 
-RoundRobinGroup defined in code:
+`RoundRobinGroup` defined in code:
 
 ```cs
 var system = new ActorSystem();
@@ -87,21 +85,28 @@ var pid = system.Root.Spawn(props);
 
 The `BroadcastPool` and `BroadcastGroup` routers will, as the name implies, broadcast any message to all of its routees.
 
-![Broadcast Router](../images/BroadcastRouter.png)
+![Broadcast Router](images/broadcast-router.png)
 
 #### Usage:
 
-BroadcastPool defined in code:
+`BroadcastPool` defined in code:
 
 ```cs
-var router = system.ActorOf(Props.Create<Worker>().WithRouter(new BroadcastPool(5)), "some-pool");
+var system = new ActorSystem();
+var props = system.Root.NewBroadcastPool(MyActorProps, 5);
+var pid = system.Root.Spawn(props);
 ```
 
-BroadcastGroup defined in code:
+`BroadcastGroup` defined in code:
 
 ```cs
-var actors = new [] { "/user/a1", "/user/a2", "/user/a3" }
-var router = system.ActorOf(Props.Empty.WithRouter(new BroadcastGroup(actors)), "some-group");
+var system = new ActorSystem();
+var props = system.Root.NewConsistentHashGroup(
+    system.Root.Spawn(MyActorProps),
+    system.Root.Spawn(MyActorProps),
+    system.Root.Spawn(MyActorProps),
+    system.Root.Spawn(MyActorProps)
+);
 ```
 
 ### Random
@@ -110,13 +115,13 @@ The `RandomPool` and `RandomGroup` routers will forward messages to routees in r
 
 #### Usage:
 
-RandomPool defined in code:
+`RandomPool` defined in code:
 
 ```cs
 var router = system.ActorOf(Props.Create<Worker>().WithRouter(new RandomPool(5)), "some-pool");
 ```
 
-RandomGroup defined in code:
+`RandomGroup` defined in code:
 
 ```cs
 var workers = new [] { "/user/workers/w1", "/user/workers/w3", "/user/workers/w3" }
