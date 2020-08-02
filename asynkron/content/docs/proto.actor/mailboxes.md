@@ -4,10 +4,11 @@
 ## Introduction
 Each actor in Proto.Actor has a `Mailbox`, this is where the messages are enqueued before being processed by the actor.
 
-## Concurrency
+Fundamentally, the following rules apply to the actor mailbox:
 
-- Message posting can be done concurrently
-- Message receive is done sequentially
+* Message posting can be done concurrently by multiple senders , aka. MPSC, Multiple Producers, Single Consumer.
+* Message receive is done sequentially by the actor. other rules can apply for special mailboxes, e.g. priority mailboxes.
+* Mailboxes are never shared between actors
 
 By default an unbounded mailbox is used, this means any number of messages can be enqueued into the mailbox.
 
@@ -39,14 +40,14 @@ When the mailbox pops a message from the queue, it hands over the message to the
 
 If an error occurs while the message is being processed, the mailbox will escalate the error to its registered invoker, so that it can take the appropriate action (e.g. restart the actor) and continue if possible.
 
-Read more on the topic of supervision [Supervision](supervision.md)
+You can read more on this topic here: [Supervision](supervision.md)
 
 ##### Mailbox dispatchers
 
 When the mailbox gets a message, it will schedule itself to process messages that are in the mailbox queues, using the dispatcher. 
 
 The dispatcher is responsible for scheduling the processing to be run. 
-The implementation of this varies by platform, e.g. in Go it is a simple invocation of a goroutine, whereas in C## the processing is handled by registering a Task to be run on the thread pool. 
+The implementation of this varies by platform, e.g. in Go it is a simple invocation of a goroutine, whereas in C# the processing is handled by registering a Task to be run on the thread pool. 
 
 The dispatcher is also responsible for limiting the throughput on each mailbox run. The mailbox will pick messages one by one in a single thread. By limiting the throughput of each run, the thread in use can be released so that other mailboxes can get scheduled to run.
 
