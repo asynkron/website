@@ -33,12 +33,13 @@ failure notifications. For details and example see the Discussion: Message Order
 
 ## The Top-Level Supervisors
 
-![Top level supervisors](images/toplevelsupervisors.png)
+![Top level supervisors](images/error-kernel.png)
 
-An actor system will during its creation start at least three actors, shown in the image above. For more information about the consequences for actor paths see Top-Level Scopes for Actor Paths.
+Supervisors in Proto.Actor are any type that implements the supervisor interface.
+This means that both actors and non actors can be supervisors.
 
-### `$root`: The Root Guardian
-The root guardian is the grand-parent of all so-called “top-level” actors and supervises all the special actors mentioned in Top-Level Scopes for Actor Paths using the `SupervisorStrategy.StoppingStrategy`, whose purpose is to terminate the child upon any type of Exception. All other throwables will be escalated … but to whom? Since every real actor has a supervisor, the supervisor of the root guardian cannot be a real actor. And because this means that it is “outside of the bubble”, it is called the “bubble-walker”. This is a synthetic ActorRef which in effect stops its child upon the first sign of trouble and sets the actor system's isTerminated status to true as soon as the root guardian is fully terminated (all children recursively stopped).
+At the top of Proto.Actor are N number of non actor based supervisors.
+
 
 ## What Restarting Means
 
