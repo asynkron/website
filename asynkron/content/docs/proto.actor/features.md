@@ -5,38 +5,6 @@ draft: false
 tags: [protoactor, docs]
 ---
 
-## Mailbox
-
-### Message processing
-
-### Concurrency
-
-- Message posting can be done concurrently
-- Message receive is done sequentially
-
-#### Queues
-
-Proto Actor provides two implementations of mailbox queues - an unbounded and a bounded. The unbounded queue is useful for X. The bounded queue is useful for Y.
-
-#### Dispatchers and invokers
-
-The mailbox requires two handlers to be registered, a dispatcher and an invoker. When an actor is spawned, the invoker will be the actor context, and the dispatcher is taken from the Props.
-
-##### Mailbox invoker
-
-When the mailbox pops a message from the queue, it hands over the message to the registered invoker to actually handle the message. For an actor, the actor's context will get the message and invoke the actor's receive method for processing. If an error occurs while the message is being processed, the mailbox will escalate the error to its registered invoker, so that it can take the appropriate action (e.g. restart the actor) and continue if possible.
-
-##### Mailbox dispatchers
-
-When the mailbox gets a message, it will schedule itself to process messages that are in the mailbox queues, using the dispatcher. The dispatcher is responsible for actually scheduling the processing to be run. The implementation of this varies by platform, e.g. in Go it is a simple invocation of a goroutine, whereas in C## the processing is handled by registering a Task to be run on the thread pool. The dispatcher is also responsible for limiting the throughput on each mailbox run. The mailbox will pick messages one by one in a single thread. By limiting the throughput of each run, the thread in use can be released so that other mailboxes can get scheduled to run.
-
-### Statistics
-
-- User messages
-- System messages
-- Started event
-- Empty event
-
 ## Actor
 
 ### Features

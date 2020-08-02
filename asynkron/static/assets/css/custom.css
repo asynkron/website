@@ -27,8 +27,8 @@ code {
 }
 
 p code, li code, i code {
-    background-color: #feeaea;
-
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
     border-radius: 4px;
     padding: 2px 6px 2px 6px;
     font-weight: 450;
@@ -116,7 +116,7 @@ h3, .h3 {
 
 .markdown-img {
     max-height: 400px;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .markdown-img-bg {

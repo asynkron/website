@@ -9,34 +9,35 @@ tags: [protoactor, docs]
 
 ## Introduction
 
-- [What is Proto.Actor?](what-is-protoactor.md)
-- [Why Proto.Actor](why-protoactor.md)
-- [Design Principles](design-principles.md)
-- [Features](features.md)
+* [What is Proto.Actor?](what-is-protoactor.md)
+* [Why Proto.Actor](why-protoactor.md)
+* [Design Principles](design-principles.md)
+* [Features](features.md)
 
 ## Proto.Actor Concepts
 
-- [What is an Actor?](actors.md)
-- [What is a Message?](messages.md)
-- [Terminology, Concepts](terminology.md)
-- [Supervision and Monitoring](supervision.md)
-- [Location Transparency](location-transparency.md)
-- [Message Delivery Reliability](durability.md)
+* [What is an Actor?](actors.md)
+* [What is a Message?](messages.md)
+* [Terminology, Concepts](terminology.md)
+* [Supervision and Monitoring](supervision.md)
+* [Location Transparency](location-transparency.md)
+* [Message Delivery Reliability](durability.md)
 
 ## Languages APIs
 
-- [Go](golang/)
-- [C#/.NET](dotnet/)
+* [Go](golang/)
+* [C#/.NET](dotnet/)
 
-## Modules
+## Building Blocks
 
-- [Actor](actors.md)
-- [Remote](remote.md)
-- [Cluster](cluster.md)
-- [Router](routers.md)
-- [SimpleScheduler](scheduling.md)
+* [Actor](actors.md)
+* [Mailboxes](mailboxes.md)
+* [Router](routers.md)
+* [Remote](remote.md)
+* [Cluster](cluster.md)
+* [SimpleScheduler](scheduling.md)
 
 ## Additional Information
 
-- [Books](books.md)
+* [Books](books.md)
 

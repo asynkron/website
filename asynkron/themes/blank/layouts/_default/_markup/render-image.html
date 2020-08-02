@@ -16,9 +16,6 @@
 </figure>
 {{- else -}}
 <div class="markdown-img-bg">
-<figure class="image-caption">
     <img src="../{{ .Destination | safeURL }}" class="markdown-img rounded img-fluid" alt="{{ $.Text }}" />
-    <figcaption>{{ with $.Title | safeHTML }}{{ . }}{{ end }}</figcaption>
-</figure>
 </div>
 {{- end -}}
