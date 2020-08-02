@@ -27,8 +27,8 @@ title: .NET Documentation
 - [Remote](Remote)
 
 ## Cluster
-- [Cluster](Cluster)
-- [Grains](Grains)
+- [Cluster](cluster.md)
+- [Grains](grains.md)
 
 ## Persistence
 - [Persistence](Persistence)

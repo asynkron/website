@@ -32,7 +32,7 @@ tags: [protoactor, docs]
 
 - [Actor](actors.md)
 - [Remote](remote.md)
-- [Cluster](grains.md)
+- [Cluster](cluster.md)
 - [Router](routers.md)
 - [SimpleScheduler](scheduling.md)
 
