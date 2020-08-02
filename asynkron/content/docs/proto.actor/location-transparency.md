@@ -17,10 +17,10 @@ In Proto.Actor, a PID can be thought of similar to a phone number.
 If you have a PID to someone, you can communicate with them.
 No matter if they are close or far away.
 
-### Using a PID to communicate with a local actor:
+##### Using a PID to communicate with a local actor:
 ![Local Actor](images/actor-local.png)
 
-### Using a PID to communicate with a remote actor:
+##### Using a PID to communicate with a remote actor:
 ![Remote Actor](images/actor-remote.png)
 
 
@@ -34,9 +34,10 @@ In Proto.Actor the default for remote messaging is Protobuf.
 On the .NET platform, we have built in support for generating Protobuf to C# out of the box.
 Good practice is to define most of your systems message this way to avoid later problems switching from non serializable to serializable messages.
 
-Another consequence is that everything needs to be aware of all interactions being fully asynchronous, which in a computer network might mean that it may take several minutes for a message to reach its recipient (depending on configuration). It also means that the probability for a message to be lost is much higher than within one CLR, where it is close to zero (still: no hard guarantee!).
+Another consequence is that everything needs to be aware of all interactions being fully asynchronous, which in a computer network might mean that it may take several minutes for a message to reach its recipient (depending on configuration). It also means that the probability for a message to be lost is much higher than within one CLR, where it is close to zero.
 
 ## Peer-to-Peer vs. Client-Server
+
 Proto.Remote is a communication module for connecting actor systems in a peer-to-peer fashion, and it is the foundation for Proto.Cluster. The design of remoting is driven by two (related) design decisions:
 
 Communication between involved systems is symmetric: if a system A can connect to a system B then system B must also be able to connect to system A independently.
