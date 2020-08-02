@@ -42,6 +42,7 @@ tags: [protoactor, docs]
 * [Message Throttling](throttling.md)
 * [Work Pulling Pattern](work-pulling.md)
 * [Limit Concurrency](limit-concurrency.md)
+* [Scheduling Periodic Messages](scheduling.md)
 
 ## Additional Information
 
