@@ -8,7 +8,7 @@ tags: [protoactor, docs]
 # Related material
 
 ##  Manning Publications Co.
-* [Reactive Applications with Akka.NET](https://www.manning.com/books/reactive-applications-with-akka-net)
+
 * [Akka in action](http://www.manning.com/roestenburg/)
 * [Functional and Reactive Domain Modeling](http://www.manning.com/ghosh2/)
 * [Functional Reactive Programming](http://www.manning.com/blackheath/)

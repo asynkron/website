@@ -37,6 +37,12 @@ tags: [protoactor, docs]
 * [Cluster](cluster.md)
 * [SimpleScheduler](scheduling.md)
 
+## Useful Patterns
+
+* [Message Throttling](throttling.md)
+* [Work Pulling Pattern](work-pulling.md)
+* [Limit Concurrency](limit-concurrency.md)
+
 ## Additional Information
 
 * [Books](books.md)
