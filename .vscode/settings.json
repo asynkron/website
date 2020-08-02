@@ -1,7 +1,11 @@
 {
     "cSpell.words": [
         "Proto",
+        "Protobuf",
+        "parallelization",
+        "remoting",
         "routee's",
-        "routees"
+        "routees",
+        "serializable"
     ]
 }
