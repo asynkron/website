@@ -28,7 +28,7 @@ The unbounded mailbox is a convenient default but in a scenario where messages a
 
 ![Dropping head mailbox](images/dropping-head-mailbox.png)
 
-## Instrumentation
+## Mailbox Instrumentation
 
 ### Dispatchers and invokers
 
