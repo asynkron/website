@@ -1,8 +1,3 @@
----
-layout: docs.hbs
-title: PID
----
-
 # PID
 
 When you spawn an actor you don't get a direct reference to it. Instead you get a `PID` (short for process ID) which is a serializable identifier that is used to send messages to the actor's mailbox. A benefit of this is that the `PID` can easily and cheaply be serialized and sent over the wire, allowing for actors to communicate remotely.
@@ -11,7 +6,7 @@ When you spawn an actor you don't get a direct reference to it. Instead you get 
 
 There are two main methods of communicating with a PID.
 
-### Tell
+### Send
 
 `Tell` is a non-blocking, fire-and-forget method for sending a message to an actor. The message will be enqueued in the receiving actor's mailbox and will eventually be processed, assuming the actor isn't stopped. Tell is also the most performant way of communicating with actors, so it is the preferred default unless your use case requires a request/reply pattern of communication.
 

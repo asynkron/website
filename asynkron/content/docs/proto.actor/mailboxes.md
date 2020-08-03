@@ -21,9 +21,15 @@ By default an unbounded mailbox is used, this means any number of messages can b
 
 To use a specific mailbox implementation, you can customize the Props:
 
+C#
 ```csharp
 var props = Actor.FromProducer(() => new MyActor())
     .WithMailbox(() => UnboundedMailbox.Create());
+```
+
+Go
+```go
+props := actor.FromProducer(MyActorProducer).WithMailbox(MyMailboxProducer)
 ```
 
 ## Unbounded Mailbox
@@ -64,6 +70,19 @@ The dispatcher is responsible for scheduling the processing to be run.
 The implementation of this varies by platform, e.g. in Go it is a simple invocation of a goroutine, whereas in C# the processing is handled by registering a Task to be run on the thread pool. 
 
 The dispatcher is also responsible for limiting the throughput on each mailbox run. The mailbox will pick messages one by one in a single thread. By limiting the throughput of each run, the thread in use can be released so that other mailboxes can get scheduled to run.
+
+There are some other common reasons to select a different dispatcher. These reasons include (but are not limited to):
+
+* isolating one or more actors to specific threads in order to:
+  * ensure high-load actors don't starve the system by consuming too much cpu-time;
+  * ensure important actors always have a dedicated thread to do their job;
+  * create [bulkheads](http://skife.org/architecture/fault-tolerance/2009/12/31/bulkheads.html), ensuring problems created in one part of the system do not leak to others;
+* allow actors to execute in a specific SyncrhonizationContext;
+
+{{< note >}}
+Consider using custom dispatchers for special cases only. Correctly configuring dispatchers requires some understanding of how the framework works. Custom dispatchers *should not* be considered the default solution for performance problems. It's considered normal for complex applications to have one or a few custom dispatchers, it's not usual for most or all actors in a system to require a custom dispatcher configuration.
+{{</ note >}}
+
 
 ##### .NET Specific information
 

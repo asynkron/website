@@ -21,7 +21,7 @@ The API to change behaviors is available to the actor instance is very simple:
 
 The example below shows how to switch behaviors using `Become`:
 
-```gol
+```go
 func (state *BecomeActor) Receive(context actor.Context) {
     switch msg := context.Message().(type) {
     case Hello:

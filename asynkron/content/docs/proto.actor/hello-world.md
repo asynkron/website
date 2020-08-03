@@ -5,8 +5,11 @@ title: The Obligatory Hello World
 #  The Obligatory Hello World
 This example shows how to define and consume actors in C#
 
-## Hello World using the C# API
-#### Define a message:
+## Hello World 
+
+### Define a message:
+
+C#
 ```csharp
 class Hello
 {
@@ -14,7 +17,15 @@ class Hello
 }
 ```
 
+Go
+```go
+//define a struct for our message
+type Hello struct{ Who string }
+```
+
 #### Define your actor
+
+C#
 ```csharp
 class HelloActor : IActor
 {
@@ -30,7 +41,19 @@ class HelloActor : IActor
 }
 ```
 
+Go
+```go
+func (state *HelloActor) Receive(context actor.Context) {
+    switch msg := context.Message().(type) {
+    case Hello:
+        fmt.Printf("Hello %v\n", msg.Who)
+    }
+}
+```
+
 #### Usage:
+
+C#
 ```csharp
 var props = Actor.FromProducer(() => new HelloActor());
 var pid = Actor.Spawn(props);
@@ -38,4 +61,14 @@ pid.Tell(new Hello
 {
     Who = "Alex"
 });
+```
+
+Go
+```go
+func main() {
+    props := actor.FromInstance(&HelloActor{})
+    pid := actor.Spawn(props)
+    pid.Tell(Hello{Who: "Roger"})
+    console.ReadLine()
+}
 ```

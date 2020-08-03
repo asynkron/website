@@ -36,4 +36,4 @@ In this case the actor will first be sent a `Restarting` message notifying it th
 
 ## Flow diagram
 
-![Actor lifecycle](../images/ActorLifecycle.png)
+![Actor lifecycle](images/ActorLifecycle.png)
