@@ -21,16 +21,21 @@ By default an unbounded mailbox is used, this means any number of messages can b
 
 To use a specific mailbox implementation, you can customize the Props:
 
-C#
+{{< tabs >}}
+{{< tab "C#" >}}
 ```csharp
 var props = Actor.FromProducer(() => new MyActor())
     .WithMailbox(() => UnboundedMailbox.Create());
 ```
+{{</ tab >}}
 
-Go
+{{< tab "Go" >}}
 ```go
-props := actor.FromProducer(MyActorProducer).WithMailbox(MyMailboxProducer)
+props := actor.FromProducer(MyActorProducer)
+    .WithMailbox(MyMailboxProducer)
 ```
+{{</ tab >}}
+{{</ tabs >}}
 
 ## Unbounded Mailbox
 

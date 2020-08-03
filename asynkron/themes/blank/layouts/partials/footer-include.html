@@ -4,6 +4,9 @@
 <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
 
 <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+{{ $js := resources.Get "js/tabs.js" }}
+<script type="text/javascript" src="{{ $js.Permalink }}"></script>
+
 
 <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
 <script type="text/javascript" src="/assets/js/aos.js"></script>
