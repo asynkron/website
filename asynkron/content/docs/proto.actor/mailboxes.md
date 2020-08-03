@@ -28,7 +28,6 @@ var props = Actor.FromProducer(() => new MyActor())
     .WithMailbox(() => UnboundedMailbox.Create());
 ```
 {{</ tab >}}
-
 {{< tab "Go" >}}
 ```go
 props := actor.FromProducer(MyActorProducer)

@@ -9,23 +9,27 @@ This example shows how to define and consume actors in C#
 
 ### Define a message:
 
-C#
+{{< tabs >}}
+{{< tab "C#" >}}
 ```csharp
 class Hello
 {
     public string Who;
 }
 ```
-
-Go
+{{</ tab >}}
+{{< tab "Go" >}}
 ```go
 //define a struct for our message
 type Hello struct{ Who string }
 ```
+{{</ tab >}}
+{{</ tabs >}}
 
 #### Define your actor
 
-C#
+{{< tabs >}}
+{{< tab "C#" >}}
 ```csharp
 class HelloActor : IActor
 {
@@ -40,8 +44,8 @@ class HelloActor : IActor
     }
 }
 ```
-
-Go
+{{</ tab >}}
+{{< tab "Go" >}}
 ```go
 func (state *HelloActor) Receive(context actor.Context) {
     switch msg := context.Message().(type) {
@@ -50,10 +54,13 @@ func (state *HelloActor) Receive(context actor.Context) {
     }
 }
 ```
+{{</ tab >}}
+{{</ tabs >}}
 
 #### Usage:
 
-C#
+{{< tabs >}}
+{{< tab "C#" >}}
 ```csharp
 var props = Actor.FromProducer(() => new HelloActor());
 var pid = Actor.Spawn(props);
@@ -62,8 +69,8 @@ pid.Tell(new Hello
     Who = "Alex"
 });
 ```
-
-Go
+{{</ tab >}}
+{{< tab "Go" >}}
 ```go
 func main() {
     props := actor.FromInstance(&HelloActor{})
@@ -72,3 +79,5 @@ func main() {
     console.ReadLine()
 }
 ```
+{{</ tab >}}
+{{</ tabs >}}
