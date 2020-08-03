@@ -10,8 +10,9 @@ $divider-height: 5vw;
     width: 100%;
     position: relative;
     height: $divider-height;
-    pointer-events: none;
+    pointer-events: none;    
     mask-image: str-replace(url("data:image/svg+xml;utf8,%3csvg viewBox='0 0 100 100' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3e%3cpath d='M0,0 C16.6666667,66 33.3333333,98 50,98 C66.6666667,98 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z' fill='#{$white}'/%3e%3c/svg%3e"), "#", "%23");
+    -webkit-mask-image: str-replace(url("data:image/svg+xml;utf8,%3csvg viewBox='0 0 100 100' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3e%3cpath d='M0,0 C16.6666667,66 33.3333333,98 50,98 C66.6666667,98 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z' fill='#{$white}'/%3e%3c/svg%3e"), "#", "%23");
     mask-size: 100% 101%;
     background: white;
     &.divider-side{
@@ -22,6 +23,7 @@ $divider-height: 5vw;
         width: 5vw;
         max-width: 72px;
         mask-image: str-replace(url("data:image/svg+xml;utf8,%3csvg viewBox='0 0 100 100' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3e%3cpath d='M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z' fill='#{$white}' fill-rule='evenodd' transform='translate(50.000000, 50.000000) rotate(-90.000000) translate(-50.000000, -50.000000)' /%3e%3c/svg%3e"), "#", "%23");
+        -webkit-mask-image: str-replace(url("data:image/svg+xml;utf8,%3csvg viewBox='0 0 100 100' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3e%3cpath d='M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z' fill='#{$white}' fill-rule='evenodd' transform='translate(50.000000, 50.000000) rotate(-90.000000) translate(-50.000000, -50.000000)' /%3e%3c/svg%3e"), "#", "%23");
         mask-size: 100% 101%;
         &:first-child{
             left: -1px;
