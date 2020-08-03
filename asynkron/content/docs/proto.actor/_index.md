@@ -31,21 +31,22 @@ tags: [protoactor, docs]
 
 ## Building Blocks
 
-* [Actor](actors.md)
-    * [Props](props.md)
-    * [Spawning Actors](spawn.md)
-    * [PID](pid.md)
-    * [Mailboxes](mailboxes.md)
-    * [Deadletter](deadletter.md)
-    * [Router](routers.md)
-    * [Eventstream](eventstream.md)
-    * [Behaviors](behaviors.md)
-    * [Middleware](middleware.md) 
-    * [Receive Timeout](receive-timeout.md)
-* [Persistence](persistence.md)    
-* [Remote](remote.md)
-* [Cluster](cluster.md)
-* [SimpleScheduler](scheduling.md)
+* [Actor](actors.md) - What are actors?
+    * [Props](props.md) - How do I configure actors?
+    * [Spawning Actors](spawn.md) - How do I instantiate actors?
+    * [PID](pid.md) - How do I communicate with actors?
+    * [Mailboxes](mailboxes.md) - How does the actor process messages?
+    * [Deadletter](deadletter.md) - What happens to lost messages?
+    * [Router](routers.md) - How do I forward messages to to pools or groups of workers?
+    * [Eventstream](eventstream.md) - How are infrastructure events managed?
+    * [Behaviors](behaviors.md) - How do I build state machines with actors?
+    * [Middleware](middleware.md) - How do I intercept or observe messages between actors?
+    * [Receive Timeout](receive-timeout.md) - How do I trigger code when actors go idle?
+* [Persistence](persistence.md) - How do I persist state for actors?
+* [Remote](remote.md) - How do I communicate with actors on other nodes?
+    * [Remote Deployment](remote-deploy-md) - How do I spawn actors on other nodes?
+* [Cluster](cluster.md) - How do I build clusters of actor nodes?
+* [SimpleScheduler](scheduling.md) - How do I send messages on a timer?
 
 ## Useful Patterns
 
