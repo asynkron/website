@@ -26,7 +26,7 @@ https://github.com/AsynkronIT/protoactor-bootcamp
 * [Design Principles](design-principles.md)
 * [Features](features.md)
 
-## Proto.Actor Concepts
+## Concepts
 
 * [What is an Actor?](actors.md)
 * [What is a Message?](messages.md)
