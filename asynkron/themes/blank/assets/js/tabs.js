@@ -6,8 +6,16 @@ $(document).ready(function () {
         var navTabs = $(this).closest('.code-tabs').find('.nav-tabs');
         title = $(this).attr('title') + tabId;
         $(this).attr("id","tab" + tabId);
-        navTabs.append('<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" aria-selected="false" href="#tab'+tabId+'" aria-controls="tab' + tabId + '" >' + title + '</a></li');
+        if (idx == 0) {
+            $(this).addClass("active");
+            navTabs.append('<li class="nav-item"><a class="nav-link active" data-toggle="tab" role="tab" aria-selected="true" href="#tab'+tabId+'" aria-controls="tab' + tabId + '" >' + title + '</a></li');
+        } else {
+            navTabs.append('<li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" aria-selected="false" href="#tab'+tabId+'" aria-controls="tab' + tabId + '" >' + title + '</a></li');
+        }
         
+        
+        
+
         tabId++;
     });
 });

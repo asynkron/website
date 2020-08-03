@@ -4,6 +4,7 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
+@import "../user-variables";
 
 $white:    #fff;
 $gray-100: #f8f9fa;
@@ -66,9 +67,9 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       #009b72;
-$primary-2:     #046865;
-$primary-3:     #192d35;
+// $primary:       #009b72;
+// $primary-2:     #046865;
+// $primary-3:     #192d35;
 $secondary:     $gray-300;
 $success:       $primary;
 $info:          $cyan;

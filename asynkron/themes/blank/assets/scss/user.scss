@@ -177,3 +177,7 @@ h3, .h3 {
 .nav-link {
     font-weight: bold;
 }
+
+.nav-link.active {
+    color: $primary;
+}
