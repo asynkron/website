@@ -2,7 +2,12 @@
 # Mailboxes
 
 ## Introduction
-Each actor in Proto.Actor has a `Mailbox`, this is where the messages are enqueued before being processed by the actor.
+
+When you send a message to an actor, the message doesn't go directly to the actor, but goes to the actor's mailbox until the actor gets time to process it.
+
+The default mailbox consists of two queues of messages: system messages and user messages. The system messages are used internally by the Actor Context to suspend and resume mailbox processing in case of failure. System messages are also used by internally to manage the Actor, e.g. starting, stopping and restarting it. User messages are sent to the actual Actor.
+
+Messages in the mailbox will always be delivered in FIFO order, with one exception: if there are any system messages they will always be processed before any user messages.
 
 Fundamentally, the following rules apply to the actor mailbox:
 
@@ -11,6 +16,15 @@ Fundamentally, the following rules apply to the actor mailbox:
 * Mailboxes are never shared between actors
 
 By default an unbounded mailbox is used, this means any number of messages can be enqueued into the mailbox.
+
+## Changing the mailbox
+
+To use a specific mailbox implementation, you can customize the Props:
+
+```csharp
+var props = Actor.FromProducer(() => new MyActor())
+    .WithMailbox(() => UnboundedMailbox.Create());
+```
 
 ## Unbounded Mailbox
 
@@ -30,11 +44,11 @@ The unbounded mailbox is a convenient default but in a scenario where messages a
 
 ## Mailbox Instrumentation
 
-### Dispatchers and invokers
+### Dispatchers and Invokers
 
 The mailbox requires two handlers to be registered, a dispatcher and an invoker. When an actor is spawned, the invoker will be the actor context, and the dispatcher is taken from the Props.
 
-##### Mailbox invoker
+#### Mailbox Invoker
 
 When the mailbox pops a message from the queue, it hands over the message to the registered invoker to handle the message. For an actor, the actor's context will get the message and invoke the actor's `Receive` method for processing. 
 
@@ -42,7 +56,7 @@ If an error occurs while the message is being processed, the mailbox will escala
 
 You can read more on this topic here: [Supervision](supervision.md)
 
-##### Mailbox dispatchers
+#### Mailbox Dispatchers
 
 When the mailbox gets a message, it will schedule itself to process messages that are in the mailbox queues, using the dispatcher. 
 
@@ -51,7 +65,19 @@ The implementation of this varies by platform, e.g. in Go it is a simple invocat
 
 The dispatcher is also responsible for limiting the throughput on each mailbox run. The mailbox will pick messages one by one in a single thread. By limiting the throughput of each run, the thread in use can be released so that other mailboxes can get scheduled to run.
 
-### Statistics
+##### .NET Specific information
+
+By default, all actors share a singleton `ThreadPoolDispatcher` with a throughput of 300 messages per mailbox run.
+
+###### ThreadPoolDispatcher
+
+The `ThreadPoolDispatcher` uses the built-in `TaskFactory` to schedule mailbox runs on the standard .NET thread pool.
+
+###### CurrentSynchronizationContextDispatcher
+
+The `CurrentSynchronizationContextDispatcher` works the same way as the `ThreadPoolDispatcher`, but uses the current `SynchronizationContext` as the `TaskScheduler`. This dispatcher is useful if you are running Proto.Actor in a desktop GUI application.
+
+### Mailbox Statistics
 
 Mailbox statistics allows the developer to listen to the following mailbox events:
 
@@ -59,3 +85,10 @@ Mailbox statistics allows the developer to listen to the following mailbox event
 - System messages
 - Started event
 - Empty event
+
+Mailbox statistics provides an extension point to get notifications of the following mailbox events: MailboxStarted, MailboxEmpty, MessagePosted, MessageReceived.
+
+```csharp
+var props = Actor.FromProducer(() => new MyActor())
+    .WithMailbox(() => UnboundedMailbox.Create(myMailboxStatistics1, myMailboxStatistics2));
+```
