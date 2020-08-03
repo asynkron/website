@@ -159,8 +159,9 @@ namespace ConsoleApplication11
     {
         static void Main(string[] args)
         {
+            var system = new ActorSystem();
             var props = Actor.FromProducer(() => new GreetingActor());
-            var greeter = Actor.Spawn(props);
+            var greeter = system.Root.Spawn(props);
 
             // Send a message to the actor
             greeter.Tell(new Greet("World"));

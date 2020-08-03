@@ -7,6 +7,11 @@ tags: [protoactor, docs]
 
 # Proto.Actor Framework
 
+## TLDR Show me code!
+
+* [Hello World](hello-world.md)
+* [Getting Started](getting-started.md)
+
 ## Introduction
 
 * [What is Proto.Actor?](what-is-protoactor.md)
@@ -20,22 +25,27 @@ tags: [protoactor, docs]
 * [What is a Message?](messages.md)
 * [Terminology, Concepts](terminology.md)
 * [Supervision and Monitoring](supervision.md)
+* [Actor lifecycle](life-cycle.md)
 * [Location Transparency](location-transparency.md)
 * [Message Delivery Reliability](durability.md)
 
 ## Building Blocks
 
 * [Actor](actors.md)
-* [Mailboxes](mailboxes.md)
-* [Router](routers.md)
+    * [Props](props.md)
+    * [Spawning Actors](spawn.md)
+    * [PID](pid.md)
+    * [Mailboxes](mailboxes.md)
+    * [Deadletter](deadletter.md)
+    * [Router](routers.md)
+    * [Eventstream](eventstream.md)
+    * [Behaviors](behaviors.md)
+    * [Middleware](middleware.md) 
+    * [Receive Timeout](receive-timeout.md)
+* [Persistence](persistence.md)    
 * [Remote](remote.md)
 * [Cluster](cluster.md)
 * [SimpleScheduler](scheduling.md)
-
-## Languages APIs
-
-* [Go](golang/)
-* [C#/.NET](dotnet/)
 
 ## Useful Patterns
 

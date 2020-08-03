@@ -21,7 +21,7 @@ public class LightBulb : IActor
 
 This is done by means of delegating the default `ReceiveAsync` method to call the `ReceiveAsync` method on the `Behavior` class:
 
-```
+```csharp
 public Task ReceiveAsync(IContext context)
 {
     return _behavior.ReceiveAsync(context);

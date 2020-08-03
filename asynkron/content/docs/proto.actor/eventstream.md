@@ -21,7 +21,7 @@ When an endpoint terminates, the remoting layer will send a `remoting.EndpointTe
 This can be used if you need to know about your current network topology.
 This event is also used to trigger `actor.Terminate` events for remote watched actors.
 
-![Cluster Events](/docs/images/remoteterminate.png)
+![Cluster Events](images/remoteterminate.png)
 
 ## Cluster topology
 **Events**
@@ -44,4 +44,4 @@ The member list actor use the `cluster.MemberStatusBatch` to calculate a delta o
 #### PartitionActor
 The `cluster.MemberStatusEvent` messages are handled by the `cluster.PartitionActor`'s to determine if virtual actor ownership should be handed over to other nodes.
 
-![Cluster Events](/docs/images/clusterevents.png)
+![Cluster Events](images/clusterevents.png)
