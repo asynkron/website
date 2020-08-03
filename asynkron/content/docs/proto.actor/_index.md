@@ -7,7 +7,7 @@ tags: [protoactor, docs]
 
 # Proto.Actor Framework
 
-## TLDR Show me code!
+## TLDR; Just show me the code!
 
 * [Hello World](hello-world.md)
 * [Getting Started](getting-started.md)
