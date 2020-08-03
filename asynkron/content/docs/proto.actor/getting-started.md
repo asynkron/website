@@ -164,7 +164,7 @@ namespace ConsoleApplication11
             var greeter = system.Root.Spawn(props);
 
             // Send a message to the actor
-            greeter.Tell(new Greet("World"));
+            system.Root.Send(new Greet("World"));
 
             // This prevents the app from exiting
             // before the async work is done
