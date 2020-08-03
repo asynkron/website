@@ -71,7 +71,7 @@ Download from https://github.com/AsynkronIT/protoactor-go.
 * Supervisor hierarchies with "let it crash" semantics.
 * Supervisor hierarchies can span over multiple virtual machines to provide truly fault-tolerant systems.
 * Excellent for writing highly fault-tolerant systems that self-heal and never stop.
-See {{< link "Fault Tolerance" "fault-tolerance.md" >}}.
+See [Fault Tolerance](fault-tolerance.md).
 
 ### Location Transparency
 Everything in Proto.Actor is designed to work in a distributed environment: all interactions of actors use pure message passing and everything is asynchronous.
