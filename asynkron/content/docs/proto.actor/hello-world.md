@@ -26,7 +26,7 @@ type Hello struct{ Who string }
 {{</ tab >}}
 {{</ tabs >}}
 
-#### Define your actor
+### Define your actor
 
 {{< tabs >}}
 {{< tab "C#" >}}
@@ -57,7 +57,7 @@ func (state *HelloActor) Receive(context actor.Context) {
 {{</ tab >}}
 {{</ tabs >}}
 
-#### Usage:
+### Usage:
 
 {{< tabs >}}
 {{< tab "C#" >}}
