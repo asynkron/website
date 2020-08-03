@@ -7,7 +7,7 @@ This example shows how to define and consume actors in C#
 
 ## Hello World 
 
-### Define a message:
+### Define a message
 
 {{< tabs >}}
 {{< tab "C#" >}}
@@ -57,7 +57,7 @@ func (state *HelloActor) Receive(context actor.Context) {
 {{</ tab >}}
 {{</ tabs >}}
 
-### Usage:
+### Usage
 
 {{< tabs >}}
 {{< tab "C#" >}}
