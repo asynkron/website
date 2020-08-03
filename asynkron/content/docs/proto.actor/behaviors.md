@@ -38,7 +38,7 @@ There are three methods available for changing behaviors:
 
 ### Become
 
-When we initialise the LightBulb, we can set the initial state of the light to off:
+When we initialize the LightBulb, we can set the initial state of the light to off:
 
 ```csharp
 public class LightBulb : IActor
@@ -94,7 +94,7 @@ private Task On(IContext context)
 
 ### Global Message Handling
 
-Sometimes you want certain messages to be treated the same way regardless of what your current behavior is. Consider what would happen were you to hit the light bulb with a hammer - it would smash, regardless of it being On or Off. This can be accomplished by handling these message types _before_ delagating to the Behavior class:
+Sometimes you want certain messages to be treated the same way regardless of what your current behavior is. Consider what would happen were you to hit the light bulb with a hammer - it would smash, regardless of it being On or Off. This can be accomplished by handling these message types _before_ delegating to the Behavior class:
 
 ```csharp
 public Task ReceiveAsync(IContext context)
@@ -113,7 +113,7 @@ public Task ReceiveAsync(IContext context)
 ```
 In this example we return from the `HitWithHammer` case to prevent the message being handled by the specific state we are in. If you want to to handle it globally as well as delegate to the specific behavior just don't return.
 
-We can also now handle the cases where somebody tries to turn on or touch the lightbulb after it has been smashed, or replaces the bulb:
+We can also now handle the cases where somebody tries to turn on or touch the light bulb after it has been smashed, or replaces the bulb:
 
 ```csharp
 private Task Smashed(IContext context)
@@ -139,6 +139,7 @@ private Task Smashed(IContext context)
 
 This example shows how to use the `BecomeStacked` and `UnbecomeStacked` methods. When the actor calls `UnbecomeStacked` in `Receive2` it reverts back to `Receive`.
 
+C#
 ```csharp
 public Task Receive(IContext context)
 {
@@ -151,3 +152,13 @@ public Task Receive2(IContext context)
 }
 ```
 
+Go
+```go
+func (state *BecomeActor) Receive(context actor.Context) {
+    context.BecomeStacked(state.Receive2)
+}
+
+func (state *BecomeActor) Receive2(context actor.Context) {
+    context.UnbecomeStacked()
+}
+```
