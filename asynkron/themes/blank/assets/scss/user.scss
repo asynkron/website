@@ -92,13 +92,13 @@ code {
 
 
 .note {
-    border: 0px solid #4da1d7;
+    border: 0px solid lighten($color: $primary, $amount: 20);
     border-left-width: 10px;
     border-radius: 0;
     background-color: $secondary;
 
     &:before {
-        background-color: #4da1d7;;
+        background-color: lighten($color: $primary, $amount: 20);
         content: "i";
         color: white;
         border-radius: 50%;
