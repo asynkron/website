@@ -39,7 +39,7 @@ role of the “Dead Letter Office”.
 
 ## The General Rules
 
-These are the rules for message sends (i.e. the `Tell`  method, which
+These are the rules for message sends (i.e. the `Send`  method, which
 also underlies the `Request` pattern):
 
 * **at-most-once delivery**, i.e. no guaranteed delivery
@@ -189,7 +189,7 @@ this you should only rely on The [General Rules]().
 
 The Proto.Actor test suite relies on not losing messages in the local context (and for
 non-error condition tests also for remote deployment), meaning that we
-actually do apply the best effort to keep our tests stable. A local `Tell`
+actually do apply the best effort to keep our tests stable. A local `Send`
 operation can however fail for the same reasons as a normal method call can on
 the CLR:
 
