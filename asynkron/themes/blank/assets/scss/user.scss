@@ -4,14 +4,12 @@
 //
 // Place your own custom CSS or SCSS rules below this line, these rules will override any Bootstrap and theme variables.
 
-a {
+main a {
     font-weight: normal;
 }
 
-
 pre {
-    padding: 16px;
-    
+    padding: 16px;    
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
@@ -19,7 +17,6 @@ pre {
     border-left: 10px solid #e9edf1;
     line-height: 18px;
     overflow-x: scroll;
-    border-radius: 4px;
 }
 
 code {
@@ -39,70 +36,110 @@ p code, li code, i code {
 
 #TableOfContents {
     font-size: smaller;
-}
 
-#TableOfContents ul {
-    list-style: none;
-    padding: 0;
-}
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 
-#TableOfContents li {
-    display: block;
-    padding-left: 16px;
-}
+    li {
+        display: block;
+        padding-left: 16px;
 
-#TableOfContents li a {
-    padding: 8px 0 8px 18px;
-    display: block;
-    color: #666;
-    border-bottom: 1px solid #EDEDDE;
-    line-height: 20px;
-    font-weight: 500;
+        a {
+            padding: 8px 0 8px 18px;
+            display: block;
+            color: #666;
+            border-bottom: 1px solid #EDEDDE;
+            line-height: 20px;
+            font-weight: 500;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-top: 4px solid transparent;
+                border-bottom: 4px solid transparent;
+                border-left: 4px solid #333;
+                margin: 6px 0 0 -10px;
+                position: absolute;
+            }
+        }
+    }
 }
 
 #TableOfContents>ul>li>a {
     font-weight: 800 !important;
 }
 
-#TableOfContents li a:before {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid #333;
-    margin: 6px 0 0 -10px;
-    position: absolute;
+
+.note {
+    border: 0px solid #4da1d7;
+    border-left-width: 10px;
+    border-radius: 0;
+    background-color: $secondary;
+
+    &:before {
+        background-color: #4da1d7;;
+        content: "i";
+        color: white;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        left: -17px;
+        text-align: center;
+        font-family: "courier new";
+        font-weight: bold;
+    }
+
+    .text {
+        font-weight: 400;
+    }
+    
+    .header {
+        display: block;
+        padding-bottom: 8px;
+    }
 }
 
-.note-text {
-    font-weight: 400;
-}
 
-.note-header {
-    display: block;
-    padding-bottom: 8px;
-}
+
+
 
 .warning {
 
-   
-}
+    border: 0px solid #f2ca72;
+    border-left-width: 10px;
+    border-radius: 0;
+    background-color: #fff5be;
+    color:#785d24;
 
+    &:before {
+        background-color: #f2ca72;;
+        content: "!";
+        color: white;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        left: -17px;
+        text-align: center;
+        font-family: "courier new";
+        font-weight: bold;
+    }
 
-.warning-text {
-    font-weight: 400;
-}
-
-.warning-header {
-    display: block;
-    padding-bottom: 8px;
-}
-
-.warning {
-
-   
+    .text {
+        font-weight: 400;
+    }
+    
+    .header {
+        display: block;
+        padding-bottom: 8px;
+    } 
 }
 
 
@@ -119,8 +156,4 @@ h3, .h3 {
 .markdown-img {
     max-height: 400px;
     margin-bottom: 24px;
-}
-
-.markdown-img-bg {
-    /* */
 }
