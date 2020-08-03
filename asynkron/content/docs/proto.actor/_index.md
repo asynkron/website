@@ -23,11 +23,6 @@ tags: [protoactor, docs]
 * [Location Transparency](location-transparency.md)
 * [Message Delivery Reliability](durability.md)
 
-## Languages APIs
-
-* [Go](golang/)
-* [C#/.NET](dotnet/)
-
 ## Building Blocks
 
 * [Actor](actors.md)
@@ -36,6 +31,11 @@ tags: [protoactor, docs]
 * [Remote](remote.md)
 * [Cluster](cluster.md)
 * [SimpleScheduler](scheduling.md)
+
+## Languages APIs
+
+* [Go](golang/)
+* [C#/.NET](dotnet/)
 
 ## Useful Patterns
 
