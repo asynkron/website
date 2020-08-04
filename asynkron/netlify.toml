@@ -3,3 +3,6 @@
 
 [context.deploy-preview.environment]
   HUGO_VERSION = "0.71.1"
+
+[[plugins]]
+  package = "netlify-plugin-algolia-index"
