@@ -6,3 +6,5 @@
 
 [[plugins]]
   package = "netlify-plugin-algolia-index"
+
+  package = "netlify-plugin-submit-sitemap"
