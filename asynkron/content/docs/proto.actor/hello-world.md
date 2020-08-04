@@ -43,8 +43,11 @@ In this case, we are interested in acting upon the message the actor received.
 {{< tabs >}}
 {{< tab "C#" >}}
 ```csharp
+//the actor type, owner of any actor related state
 class HelloActor : IActor
 {
+    //the receive function, invoked by the runtime whenever a message
+    //should be processed
     public Task ReceiveAsync(IContext context)
     {
         //the message we received
@@ -61,6 +64,11 @@ class HelloActor : IActor
 {{</ tab >}}
 {{< tab "Go" >}}
 ```go
+//the actor type, owner of any actor related state
+type helloActor struct{}
+
+//the receive function, invoked by the runtime whenever a message
+//should be processed
 func (state *HelloActor) Receive(context actor.Context) {
     //the message we received
     switch msg := context.Message().(type) {
