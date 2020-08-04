@@ -92,7 +92,7 @@ public class Program
     public static void Main()
     {
         var system = new ActorSystem();
-        var myActor = Actor.Spawn(Props.FromProducer(() => new MyActor));
+        var myActor = system.Root.Spawn(Props.FromProducer(() => new MyActor));
         system.Root.Send(myActor, new MyMessage("Hello World"));
         system.Root.Send(myActor,new Hi());
     }
