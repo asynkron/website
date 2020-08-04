@@ -16,8 +16,8 @@ One of the most fundamental concepts to the Actor model is the notion of ["messa
 ## How are messages defined?
 In Proto.Actor messages are simple POCO classes:
 
-### C#
-
+{{< tabs >}}
+{{< tab "C#" >}}
 ```csharp
 public class MyMessage
 {
@@ -29,14 +29,15 @@ public class MyMessage
     public string Name {get;private set;}
 }
 ```
-
-### Go
-
+{{</ tab >}}
+{{< tab "Go" >}}
 ```go
 type MyMessage struct {
     Name string
 }
 ```
+{{</ tab >}}
+{{</ tabs >}}
 
 Proto.Actor allows you to automatically pass around these messages to any actor, whether it's an actor running inside your application's local process or a remote actor running on a different machine. Proto.Actor can automatically serialize and route your message to its intended recipient(s.)
 
@@ -46,6 +47,8 @@ One of the defining characteristics of actors is that they have the ability to c
 
 Here's a simple example:
 
+{{< tabs >}}
+{{< tab "C#" >}}
 ```csharp
 using System;
 using Proto;
@@ -95,6 +98,8 @@ public class Program
     }
 }
 ```
+{{</ tab >}}
+{{</ tabs >}}
 
 `MyActor.lastActorName` gets set to the latest value provided in the last `MyMessage` instance received, and then that value gets printed to the console whenever a `Hi` message type is received.
 
