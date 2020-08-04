@@ -17,7 +17,7 @@ theme = "blank"
     lineNos = false
     lineNumbersInTable = false
     noClasses = true
-    style = "github" #https://xyproto.github.io/splash/docs/all.html
+    style = "dracula" #https://xyproto.github.io/splash/docs/all.html
     tabWidth = 4
 
   [markup.goldmark.renderer]
