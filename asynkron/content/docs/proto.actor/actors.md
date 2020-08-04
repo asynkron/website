@@ -31,7 +31,7 @@ Optionally, an actor's state can be automatically recovered to the state before 
 
 Every time a message is processed, it is matched against the current behavior of the actor. Behavior means a function which defines the actions to be taken in reaction to the message at that point in time, e.g. forward a request if the client is authorized, deny it otherwise. This behavior may change over time, e.g. because different clients obtain authorization over time, or because the actor may go into an “out-of-service” mode and later come back. These changes are achieved by either encoding them in state variables which are read from the behavior logic, or the function itself may be swapped out at runtime, see the become and unbecome operations. However, the initial behavior defined during construction of the actor object is special in the sense that a restart of the actor will reset its behavior to this initial one.
 
-Read more: [Behavior](behavior.md)
+Read more: [Behavior](behaviors.md)
 
 ## Mailbox
 
