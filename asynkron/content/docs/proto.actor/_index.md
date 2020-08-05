@@ -42,6 +42,7 @@ https://github.com/AsynkronIT/protoactor-bootcamp
     * [Props](props.md) - How do I configure actors?
     * [Spawning Actors](spawn.md) - How do I instantiate actors?
     * [PID](pid.md) - How do I communicate with actors?
+    * [Context](context.md) - What are actor and root contexts?
     * [Mailboxes](mailboxes.md) - How does the actor process messages?
     * [Deadletter](deadletter.md) - What happens to lost messages?
     * [Router](routers.md) - How do I forward messages to to pools or groups of workers?
