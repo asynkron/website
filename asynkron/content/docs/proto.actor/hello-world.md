@@ -3,7 +3,7 @@ layout: docs.hbs
 title: The Obligatory Hello World
 ---
 #  The Obligatory Hello World
-This example shows how to define and consume actors in C#
+This example shows how to define and consume actors.
 
 ## Hello World 
 
