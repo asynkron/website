@@ -14,7 +14,7 @@ One of the most fundamental concepts to the Actor model is the notion of ["messa
 **Message-passing** is how Proto.Actor actors communicate with each other in Proto.Actor.
 
 ## How are messages defined?
-In Proto.Actor messages are simple POCO classes:
+In Proto.Actor messages are simple objects:
 
 {{< tabs >}}
 {{< tab "C#" >}}
