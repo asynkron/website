@@ -32,12 +32,13 @@ code[class*='language-']{
 
 article{
   pre[class*='language-']{
-    border: 1px solid #dee2e6;
-    border-left-width: 10px;
+    border: 1px solid #ececec;
+    border-left-width: 10px; 
     font-weight: normal;
     font-size: 14px;
     padding: 10px;
     margin: 0;
+    margin-bottom: 16px;
   }
 }
 

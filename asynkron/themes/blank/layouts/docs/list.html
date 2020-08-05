@@ -1,6 +1,5 @@
 {{ define "main" }}
-
-<section class="bg-light o-hidden pt-0 pb-0">
+<section class="bg-white o-hidden pt-0 pb-0">
     <div class="container">
         
         {{ partial "breadcrumbs" . }}
@@ -14,6 +13,7 @@
                             <div>
                                 {{ $content := .Content }}
                                 {{ $content = replace $content "<table" "<table class='table bg-white'" }}
+                                {{ $content = replace $content "<blockquote" "<blockquote class='blockquote my-4 my-md-5'" }}
 								
 								{{ safeHTML $content}}
 								
