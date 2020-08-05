@@ -24,17 +24,20 @@
 
 code[class*='language-']{
   border: none;
-  font-family: "Lucida Console", Monaco, monospace !important;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   line-height: 18px;
   padding: 0;
+  background-color: unset;
 }
 
 article{
   pre[class*='language-']{
-    border: 1px solid #4d6986;
+    border: 1px solid #dee2e6;
     border-left-width: 10px;
     font-weight: normal;
     font-size: 14px;
+    padding: 10px;
+    margin: 0;
   }
 }
 
