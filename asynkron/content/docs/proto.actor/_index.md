@@ -5,6 +5,12 @@ draft: false
 tags: [protoactor, docs]
 ---
 
+```csharp
+for(var i=0;i<10;i++) {
+
+}
+```
+
 # Proto.Actor Framework
 
 ## TLDR; Just show me the code!

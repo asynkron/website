@@ -6,17 +6,35 @@
 
 @import "../../components/plugins/prism";
 
-pre[class*='language-'], code[class*='language-']{
-  background: $secondary;
-  color: $body-color;
+
+
+// code {
+
+//     background-color: unset;
+//     border: unset;
+//     border-radius: unset;
+//     padding: unset;
+//     font-weight: unset;
+//     color: unset;
+    
+//     font-weight: normal;
+//     font-family: "Lucida Console", Monaco, monospace !important;
+//     font-size: 14px;
+// }
+
+code[class*='language-']{
   border: none;
-  font-weight: 400;
+  font-family: "Lucida Console", Monaco, monospace !important;
+  line-height: 18px;
+  padding: 0;
 }
 
 article{
   pre[class*='language-']{
-    margin: 1rem 0;
-    border-radius: $border-radius;
+    border: 1px solid #4d6986;
+    border-left-width: 10px;
+    font-weight: normal;
+    font-size: 14px;
   }
 }
 

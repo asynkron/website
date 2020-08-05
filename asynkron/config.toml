@@ -10,14 +10,14 @@ theme = "blank"
 
 [markup]
   [markup.highlight]
-    codeFences = true
+    codeFences = false
     guessSyntax = false
     hl_Lines = ""
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = false
     noClasses = true
-    style = "dracula" #https://xyproto.github.io/splash/docs/all.html
+    style = "" #https://xyproto.github.io/splash/docs/all.html
     tabWidth = 4
 
   [markup.goldmark.renderer]
