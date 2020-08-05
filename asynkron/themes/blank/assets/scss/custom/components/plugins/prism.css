@@ -110,10 +110,10 @@
 	 color: #00009f;
  }
  
- .token.class-name,
+ /* .token.class-name, */
  .token.token.keyword,
  .token.important,
- .token.function,
+ /* .token.function, */
  .token.bold {
 	 font-weight: bold;
  }
